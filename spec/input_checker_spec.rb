@@ -34,16 +34,16 @@ describe 'MainPage Checker' do
 
   it 'returns some letter matches' do
     response = @input_checker.guess(guess: 'oodle')
-    expect(response).to eq(%w[r x g x x])
+    expect(response).to eq(%w[2 x 3 x x])
   end
 
   it 'returns correct letter correct number of times' do
     response = @input_checker.guess(guess: 'apace')
-    expect(response).to eq(%w[g x x x x])
+    expect(response).to eq(%w[3 x x x x])
   end
 
   it 'returns word correct' do
     response = @input_checker.guess(guess: 'audio')
-    expect(response).to eq(%w[g g g g g])
+    expect(response).to eq(%w[3 3 3 3 3])
   end
 end
