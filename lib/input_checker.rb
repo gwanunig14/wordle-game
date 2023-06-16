@@ -29,7 +29,7 @@ class InputChecker
     comparison = []
     guess_letters = guess.split('')
     guess_letters.each_with_index do |letter, index|
-      color = mark_checked_letters(letter: letter, index: index)
+      color = compare_letters(letter: letter, index: index)
       comparison.push(color)
     end
 
@@ -37,19 +37,18 @@ class InputChecker
   end
 end
 
-def mark_checked_letters(letter: string, index: number, guess_letters: %w[])
+def compare_letters(letter: string, index: number, guess_letters: %w[])
+  color_assignment = '1'
   if letter == correct_letters[index]
     correct_letters[index] = '-'
-    assign_alphabet_colors(letter: letter, color: '3')
-    '3'
+    color_assignment = '3'
   elsif !correct_letters.index(letter).nil? && guess_letters[correct_letters.index(letter)] != letter
-    assign_alphabet_colors(letter: letter, color: '2')
     correct_letters[correct_letters.index(letter)] = '-'
-    '2'
-  else
-    assign_alphabet_colors(letter: letter, color: '1')
-    'x'
+    color_assignment = '2'
   end
+
+  assign_alphabet_colors(letter: letter, color: color_assignment)
+  color_assignment
 end
 
 def assign_alphabet_colors(letter: string, color: string)
