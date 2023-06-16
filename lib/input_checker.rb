@@ -3,6 +3,7 @@
 require_relative './word_list'
 require 'pry'
 
+# InputChecker
 class InputChecker
   def initialize(correct_word:)
     @alphabet_colors = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z]
@@ -36,7 +37,7 @@ class InputChecker
   end
 end
 
-def mark_checked_letters(letter: string, index: number, guess_letters:%w[])
+def mark_checked_letters(letter: string, index: number, guess_letters: %w[])
   if letter == correct_letters[index]
     correct_letters[index] = '-'
     assign_alphabet_colors(letter: letter, color: '3')

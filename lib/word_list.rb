@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# word list
 def word_list
   %w[
     aback
