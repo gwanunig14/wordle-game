@@ -2767,6 +2767,7 @@ def word_list
     steer
     stems
     steps
+    stern
     stick
     stiff
     still
