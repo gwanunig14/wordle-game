@@ -2,7 +2,7 @@
 
 require_relative '../lib/input_checker'
 
-describe 'MainPage Checker' do
+describe 'Input Checker' do
   before do
     @input_checker = InputChecker.new(correct_word: 'audio')
   end
