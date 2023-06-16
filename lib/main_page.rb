@@ -7,6 +7,7 @@ require_relative './word_list'
 require_relative './input_checker'
 require_relative './word_generator'
 
+# MainPage
 class MainPage
   def initialize
     # @correct_word = WordGenerator.new.select_word
