@@ -30,20 +30,28 @@ describe 'MainPage Checker' do
   it 'returns no letter matches' do
     response = @input_checker.guess(guess: 'stern')
     expect(response).to eq(%w[x x x x x])
+    expect(@input_checker.alphabet_colors).to eq(%w[a b c d 1 f g h i j k l m 1
+                                                    o p q 1 1 1 u v w x y z])
   end
 
   it 'returns some letter matches' do
     response = @input_checker.guess(guess: 'oodle')
     expect(response).to eq(%w[2 x 3 x x])
+    expect(@input_checker.alphabet_colors).to eq(%w[a b c 3 1 f g h i j k 1 m n
+                                                    2 p q r s t u v w x y z])
   end
 
   it 'returns correct letter correct number of times' do
     response = @input_checker.guess(guess: 'apace')
     expect(response).to eq(%w[3 x x x x])
+    expect(@input_checker.alphabet_colors).to eq(%w[3 b 1 d 1 f g h i j k l m n
+                                                    o 1 q r s t u v w x y z])
   end
 
   it 'returns word correct' do
     response = @input_checker.guess(guess: 'audio')
     expect(response).to eq(%w[3 3 3 3 3])
+    expect(@input_checker.alphabet_colors).to eq(%w[3 b c 3 e f g h 3 j k l m n
+                                                    3 p q r s t 3 v w x y z])
   end
 end
