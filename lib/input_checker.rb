@@ -29,15 +29,11 @@ class InputChecker
       if letter == correct_letters[index]
         comparison.push('g')
         correct_letters[index] = '-'
+      elsif !correct_letters.index(letter).nil? && guess_letters[correct_letters.index(letter)] != letter
+        comparison.push('y')
+        correct_letters[correct_letters.index(letter)] = '-'
       else
         comparison.push('x')
-      end
-    end
-
-    guess_letters.each_with_index do |letter, index|
-      if !correct_letters.index(letter).nil?
-        comparison[index] = 'y'
-        correct_letters[correct_letters.index(letter)] = '-'
       end
     end
 
