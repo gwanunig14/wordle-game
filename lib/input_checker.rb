@@ -6,7 +6,7 @@ require 'pry'
 class InputChecker
   def initialize(correct_word:)
     @correct_word = correct_word
-    @alphabet_colors = %w(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+    @alphabet_colors = %w[a b c d e f g h i j k l m n o p q r s t u v w x y z]
   end
 
   attr_reader :alphabet_colors
@@ -30,20 +30,20 @@ class InputChecker
     correct_letters = @correct_word.split('')
     guess_letters.each_with_index do |letter, index|
       if letter == correct_letters[index]
-        comparison.push('g')
+        comparison.push('3')
         correct_letters[index] = '-'
         if alphabet_colors.index(letter)
-          alphabet_colors[alphabet_colors.index(letter)] = 'g'
+          alphabet_colors[alphabet_colors.index(letter)] = '3'
         end
       elsif !correct_letters.index(letter).nil? && guess_letters[correct_letters.index(letter)] != letter
-        comparison.push('r')
+        comparison.push('2')
         if alphabet_colors.index(letter)
-          alphabet_colors[alphabet_colors.index(letter)] = 'r'
+          alphabet_colors[alphabet_colors.index(letter)] = '2'
         end
         correct_letters[correct_letters.index(letter)] = '-'
       else
         if alphabet_colors.index(letter)
-          alphabet_colors[alphabet_colors.index(letter)] = 'x'
+          alphabet_colors[alphabet_colors.index(letter)] = '1'
         end
         comparison.push('x')
       end
