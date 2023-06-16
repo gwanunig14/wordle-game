@@ -34,7 +34,7 @@ describe 'MainPage Checker' do
 
   it 'returns some letter matches' do
     response = @input_checker.guess(guess: 'oodle')
-    expect(response).to eq(%w[y x g x x])
+    expect(response).to eq(%w[r x g x x])
   end
 
   it 'returns correct letter correct number of times' do

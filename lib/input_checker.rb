@@ -30,7 +30,7 @@ class InputChecker
         comparison.push('g')
         correct_letters[index] = '-'
       elsif !correct_letters.index(letter).nil? && guess_letters[correct_letters.index(letter)] != letter
-        comparison.push('y')
+        comparison.push('r')
         correct_letters[correct_letters.index(letter)] = '-'
       else
         comparison.push('x')
