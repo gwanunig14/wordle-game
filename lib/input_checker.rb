@@ -32,17 +32,21 @@ class InputChecker
       if letter == correct_letters[index]
         comparison.push('3')
         correct_letters[index] = '-'
-        alphabet_colors[alphabet_colors.index(letter)] = '3' if alphabet_colors.index(letter)
+        assign_alphabet_colors(letter: letter, color: '3')
       elsif !correct_letters.index(letter).nil? && guess_letters[correct_letters.index(letter)] != letter
         comparison.push('2')
-        alphabet_colors[alphabet_colors.index(letter)] = '2' if alphabet_colors.index(letter)
+        assign_alphabet_colors(letter: letter, color: '2')
         correct_letters[correct_letters.index(letter)] = '-'
       else
-        alphabet_colors[alphabet_colors.index(letter)] = '1' if alphabet_colors.index(letter)
+        assign_alphabet_colors(letter: letter, color: '1')
         comparison.push('x')
       end
     end
 
     comparison
   end
+end
+
+def assign_alphabet_colors(letter: string, color: string)
+  alphabet_colors[alphabet_colors.index(letter)] = color if alphabet_colors.index(letter)
 end
